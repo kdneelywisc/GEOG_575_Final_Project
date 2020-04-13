@@ -1,0 +1,3 @@
+IDEAS - A place to write down ideas for features, styles, design, etc.
+
+1. Change bar chart to lolipop chart (for info at https://www.d3-graph-gallery.com/lollipop)
