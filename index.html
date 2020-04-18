@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<title>Forest Fire Visualizer</title>
 
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<div id="splash" class="splash">
+		<button id="splash-close-btn" class ="splash-close-btn">Close</button>
+		<div class="splash-heading">
+			<h2>Welcome!</h2>
+		</div>
+		<p>Thank you for checking out the Forest Fire Visualizer.</p>
+		<p>This tool is designed to help you learn about historically significant forest fires,
+		as well as educate you on how you can help prevent forest fires.</p>
+	</div>
 
+	<header class="header">
+		<h1><i>FOREST FIRE VISUALIZER</i></h1>
+		<button id="header-button" class="header-button">Links</button>
+	</header>
 
-	<script type="text/javascript" src="main.js"></script>
+	<div id="header-dropdown-menu" class="header-dropdown-menu">
+		<ul>
+			<li id="about-menu-item">
+				<a href="#">About</a>
+			</li>
+			<li>
+				<a target="_blank" href="https://github.com/KJGEOG575/GEOG_575_Final_Project">Project Source Code</a>
+			</li>
+			<li>
+				<a href="#">Data Sources</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="info-panel">
+		<button class="accordion">Section 1</button>
+			<div class="panel">
+				<p class="panelcontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+
+		<button class="accordion">Section 2</button>
+			<div class="panel">
+				<p class="panelcontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+
+		<button class="accordion">Section 3</button>
+			<div class="panel">
+				<p class="panelcontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+	</div>
+
+	<!--
+	<script type="text/javascript" src="lib/topojson.js"></script>
+	<script type="text/javascript" src="lib/d3-queue.js"></script>
+	<script type="text/javascript" src="lib/d3-v4.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script> <!-- integrity and crossorigin atts ensure browsers will acccept this CDN script-->
+	<script type="text/javascript" src="js/main.js"></script>
+
 
 </body>
 </html>
