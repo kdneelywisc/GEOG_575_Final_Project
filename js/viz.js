@@ -6,8 +6,8 @@
 	var expressed = attrArray[0]; //initial attribute
 
 	//chart frame dimensions
-	var chartWidth = window.innerWidth * 0.425,
-		chartHeight = 473,
+	var chartWidth = window.innerWidth * 0.3,
+		chartHeight = 350,
 		leftPadding = 25,
 		rightPadding = 2,
 		topBottomPadding = 5,
@@ -27,22 +27,22 @@
 	function setMap() {
 
 		//map frame dimensions
-		var width = window.innerWidth * 0.5,
+		var width = window.innerWidth * 0.4,
 			height = 460;
 
 		//create new svg container for the map
-		var map = d3.select("body")
+		var map = d3.select("#map-container")
 			.append("svg")
 			.attr("class", "map")
 			.attr("width", width)
 			.attr("height", height);
 
 		//create geoconicconformal conic projection centered on US
-		var projection = d3.geoAlbersUsa()
-/*			.center([-101, 35])
-			.rotate([-2, 0])
-			.parallels([0, 0])*/
-			.scale(1000)
+		var projection = d3.geoAlbers()
+			.center([-15, 40])
+			.rotate([90, 0])
+			.parallels([40, 45])
+			.scale(900)
 			.translate([width / 2, height / 2]);
 
 		//create path generator
@@ -221,7 +221,7 @@
 	// function to create a dropdown menu for attribute selection
 	function createDropdown(csvData) {
 		//add select element
-		var dropdown = d3.select("body")
+		var dropdown = d3.select("#map-container")
 			.append("select")
 			.attr("class", "dropdown")
 			.on("change", function(){
@@ -307,7 +307,7 @@
 //function to create coordinated bar chart
 	function setChart(csvData, colorScale){
 		//create a second svg element to hold the bar chart
-		var chart = d3.select("body")
+		var chart = d3.select("#chart-container")
 			.append("svg")
 			.attr("width", chartWidth)
 			.attr("height", chartHeight)
