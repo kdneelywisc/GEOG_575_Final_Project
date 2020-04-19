@@ -16,7 +16,7 @@
 
 .map {
     border: medium solid #999;
-    margin: 10px 0 0 20px;
+    /* margin: 10px 0 0 20px; */
 }
 
 .selectStates {
@@ -62,7 +62,7 @@
 }
 
 .dropdown {
-    position: absolute;
+    /* position: absolute; */
     top: 30px;
     left: 40px;
     z-index: 10;
@@ -95,4 +95,38 @@ option {
     padding: 0;
     display: inline-block;
     line-height: 1em;
+}
+
+
+
+#container{
+    /* display: block; */
+    width: 960px;
+    position: relative;
+    text-align: left;
+    margin: auto;
+}
+/*Changed*/
+#container p{
+    font-size: 12pt;
+}
+
+#map-container{
+    width: 500px;
+    margin-top: 0;
+    margin-left: 117px;
+    position:absolute;
+    float: right;
+    clear:both;
+    color:#3B3B3B;
+}
+
+#chart-container{
+    width: 500px;
+    margin-top: 0;
+    margin-left: 625px;
+    position:absolute;
+    float: right;
+    clear:both;
+    color:#3B3B3B;
 }
