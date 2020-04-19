@@ -1,3 +1,7 @@
 IDEAS - A place to write down ideas for features, styles, design, etc.
 
 1. Change bar chart to lolipop chart (for info at https://www.d3-graph-gallery.com/lollipop)
+
+2. move attribute dropdown into map
+3. resize the map and charts
+4. restyle the nav bar colors
