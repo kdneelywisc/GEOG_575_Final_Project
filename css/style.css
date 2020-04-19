@@ -134,11 +134,14 @@ div.aboutdiv {
 }
 
 .info-panel{
-    width: 25%;
+    position: absolute;
+    float: left;
+    /* width: 25%; */
     background-color: #e0c7b6;
     border-color: #444444;
     border-style: solid;
     border-width: thin;
+    height: 100%;
 }
 
 .accordion {
@@ -146,7 +149,7 @@ div.aboutdiv {
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 100%;
+    width: 25%;
     text-align: left;
     outline: none;
     font-size: 15px;
@@ -164,7 +167,7 @@ div.aboutdiv {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    width: 100%;
+    width: 25%;
 }
 
 .splash {
@@ -198,4 +201,9 @@ div.aboutdiv {
 
 .splash-close-btn:hover {
     color: #66bd63;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
 }
