@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 	<title>Forest Fire Visualizer</title>
 
+	<link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="css/viz.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -54,13 +56,15 @@
 			</div>
 	</div>
 
-	<!--
-	<script type="text/javascript" src="lib/topojson.js"></script>
-	<script type="text/javascript" src="lib/d3-queue.js"></script>
-	<script type="text/javascript" src="lib/d3-v4.js"></script>-->
+
+	<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	<script src="https://d3js.org/topojson.v2.min.js"></script>
+	<script src='https://unpkg.com/simple-statistics@7.0.7/dist/simple-statistics.min.js'></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 			crossorigin="anonymous"></script> <!-- integrity and crossorigin atts ensure browsers will acccept this CDN script-->
+	<script type="text/javascript" src="js/viz.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
 
