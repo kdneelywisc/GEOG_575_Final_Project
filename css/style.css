@@ -133,42 +133,7 @@ div.aboutdiv {
     margin-right: auto;
 }
 
-.info-panel{
-    position: absolute;
-    float: left;
-    /* width: 25%; */
-    background-color: #e0c7b6;
-    border-color: #444444;
-    border-style: solid;
-    border-width: thin;
-    height: 100%;
-}
 
-.accordion {
-    background-color: #e0c7b6;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 25%;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-    display: block;
-}
-
-.active, .accordion:hover {
-    background-color: #e0c7b6;
-}
-
-.panel {
-    padding: 0 18px;
-    background-color: lightgray;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    width: 25%;
-}
 
 .splash {
     background: #0f421d;
@@ -203,7 +168,3 @@ div.aboutdiv {
     color: #66bd63;
 }
 
-.main-container {
-    display: flex;
-    flex-direction: row;
-}
