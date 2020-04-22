@@ -6,7 +6,7 @@
 	var expressed = attrArray[0]; //initial attribute
 
 	//chart frame dimensions
-	var chartWidth = window.innerWidth * 0.3,
+	var chartWidth = window.innerWidth * 0.26,
 		chartHeight = 350,
 		leftPadding = 25,
 		rightPadding = 2,
@@ -20,6 +20,12 @@
 		.range([463, 0])
 		.domain([0, 1000]);
 
+	var zoomSettings = {
+		duration: 1000,
+		ease: d3.easeCubicOut,
+		zoomLevel: 5
+	};
+
 //begin script when window loads
 	window.onload = setMap();
 
@@ -27,8 +33,8 @@
 	function setMap() {
 
 		//map frame dimensions
-		var width = window.innerWidth * 0.4,
-			height = 460;
+		var width = window.innerWidth * 0.7,
+			height = 585;
 
 		//create new svg container for the map
 		var map = d3.select("#map-container")
@@ -36,6 +42,12 @@
 			.attr("class", "map")
 			.attr("width", width)
 			.attr("height", height);
+
+		var g = map.append("g");
+
+		map.call(d3.zoom().on("zoom", () => {
+			g.attr("transform", d3.event.transform);
+		}));
 
 		//create geoconicconformal conic projection centered on US
 		var projection = d3.geoAlbers()
@@ -60,14 +72,14 @@
 		function callback(error, csvData, countryData, statesData) {
 
 			//place graticule on the map
-			setGraticule(map, path);
+			setGraticule(g, path);
 
 			//translate usStates topojson
 			var naCountries = topojson.feature(countryData, countryData.objects.US_States), //load background spatial data
 				selectStates = topojson.feature(statesData, statesData.objects.US_States_selection).features;//load choropleth data
 
 			//add NA countries to map
-			var northAmerica = map.append("path")
+			var northAmerica = g.append("path")
 				.datum(naCountries)
 				.attr("class", "countries")
 				.attr("d", path);
@@ -79,7 +91,7 @@
 			var colorScale = makeColorScale(csvData);
 
 			//add enumeration units to the map
-			setEnumerationUnits(selectStates, map, path, colorScale);
+			setEnumerationUnits(selectStates, g, path, colorScale);
 
 			//add coordinated viz to map
 			setChart(csvData, colorScale);
@@ -221,7 +233,7 @@
 	// function to create a dropdown menu for attribute selection
 	function createDropdown(csvData) {
 		//add select element
-		var dropdown = d3.select("#map-container")
+		var dropdown = d3.select(".map-container")
 			.append("select")
 			.attr("class", "dropdown")
 			.on("change", function(){
