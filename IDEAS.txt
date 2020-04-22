@@ -5,3 +5,7 @@ IDEAS - A place to write down ideas for features, styles, design, etc.
 2. move attribute dropdown into map
 3. resize the map and charts
 4. restyle the nav bar colors
+5. finish styling the info panel
+6. make splash window bigger and write more text
+7. switch bar chart to pie chart
+8. add scrolling to side panel
