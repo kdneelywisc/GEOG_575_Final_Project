@@ -67,16 +67,21 @@
 		.defer(d3.csv, "data/US_States_Data_Selection.csv") //load attributes from csv
 		.defer(d3.json, "data/US_StatesTopojson.topojson") //load background spatial data
 		.defer(d3.json, "data/US_States_selection_topo.topojson") //load choropleth spatial data
+		.defer(d3.json, "data/Fire_Poly.topojson") //load fires polygon data
 		.await(callback); //trigger callback function once data is loaded
 
-		function callback(error, csvData, countryData, statesData) {
+		function callback(error, csvData, countryData, statesData, firesData) {
 
 			//place graticule on the map
 			setGraticule(g, path);
 
 			//translate usStates topojson
 			var naCountries = topojson.feature(countryData, countryData.objects.US_States), //load background spatial data
-				selectStates = topojson.feature(statesData, statesData.objects.US_States_selection).features;//load choropleth data
+				selectStates = topojson.feature(statesData, statesData.objects.US_States_selection).features, //load choropleth data
+				firePolygons = topojson.feature(firesData, firesData.objects.Fire_Poly_with_data).features;  //load fire data
+
+			console.log(selectStates);
+			console.log(firePolygons);
 
 			//add NA countries to map
 			var northAmerica = g.append("path")
@@ -97,6 +102,16 @@
 			setChart(csvData, colorScale);
 
 			createDropdown(csvData);
+
+			// trying to add polygon layer to map
+			// var fires = map.selectAll(".firePolygons")
+			// 	.data(firePolygons)
+			// 	.enter()
+			// 	.append("path")
+			// 	.attr("class", function (d) {
+			// 		return "firesPolygons " + d.properties.FireName;
+			// 	})
+			// 	.attr("d", path);
 
 		};
 	};   // end of setMap()
@@ -455,6 +470,20 @@
 			.style("left", x + "px")
 			.style("top", y + "px");
 	};
+
+	//trying to add fire polygons to map
+	// function displayFires(map, firePolygons) {
+	// 	var fires = map.selectAll(".firePolygons")
+	// 		.data(firePolygons)
+	// 		.enter()
+	// 		.append("path")
+	// 		.attr("class", function (d) {
+	// 			return "firesPolygons " + d.properties.FireName;
+	// 		})
+	// 		.attr("d", path);
+
+
+
 
 
 })();
