@@ -135,7 +135,7 @@ div.aboutdiv {
 
 
 
-.splash {
+.splash, .data-page-splash {
     background: #0f421d;
     box-shadow: 0 0 10px 0 #474849;
     opacity: .95;
@@ -149,7 +149,7 @@ div.aboutdiv {
     z-index: 10000;
 }
 
-.splash h2, p {
+.splash, .data-page-splash h2, p {
     color: #cc9c33;
 }
 
@@ -166,5 +166,9 @@ div.aboutdiv {
 
 .splash-close-btn:hover {
     color: #66bd63;
+}
+
+.data-page-splash p {
+    display: inline;
 }
 
