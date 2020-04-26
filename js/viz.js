@@ -103,15 +103,7 @@
 
 			createDropdown(csvData);
 
-			// trying to add polygon layer to map
-			// var fires = map.selectAll(".firePolygons")
-			// 	.data(firePolygons)
-			// 	.enter()
-			// 	.append("path")
-			// 	.attr("class", function (d) {
-			// 		return "firesPolygons " + d.properties.FireName;
-			// 	})
-			// 	.attr("d", path);
+            		setFirePolys(firePolygons, g, path)
 
 		};
 	};   // end of setMap()
@@ -233,6 +225,19 @@
 			.text('{"stroke": "#000", "stroke-width": "0.5px"}');
 	};
 
+	    function setFirePolys(firePolygons, map, path){
+		    var fires = map.selectAll(".firePolygons")
+					.data(firePolygons)
+					.enter()
+					.append("path")
+					.attr("class", function (d) {
+						return "firesPolygons " + d.properties.FireName;
+					})
+					.attr("d", path);
+	    };
+    
+
+
 	//function to test for data value and return color
 	function choropleth(props, colorScale) {
 		//make sure attribute value is a number
@@ -270,6 +275,7 @@
 			.text(function (d) {return d});
 
 	};
+
 
 	//dropdown change listener handler
 	function changeAttribute(attribute, csvData){
@@ -470,17 +476,6 @@
 			.style("left", x + "px")
 			.style("top", y + "px");
 	};
-
-	//trying to add fire polygons to map
-	// function displayFires(map, firePolygons) {
-	// 	var fires = map.selectAll(".firePolygons")
-	// 		.data(firePolygons)
-	// 		.enter()
-	// 		.append("path")
-	// 		.attr("class", function (d) {
-	// 			return "firesPolygons " + d.properties.FireName;
-	// 		})
-	// 		.attr("d", path);
 
 
 
